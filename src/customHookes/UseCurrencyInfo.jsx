@@ -7,11 +7,12 @@ function useCurrencyInfo(currency) {
     const fetchCurrencyInfo = async () => {
       try {
         const response = await fetch(
-          `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`
+          `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json`
         );
 
         const result = await response.json();
-        setData(result[currency]);
+        console.log("result", result.eur);
+        setData(result.eur);
       } catch (error) {
         console.error("Error fetching currency data:", error);
       }
